@@ -1,0 +1,32 @@
+<html>
+
+</head>
+
+<script>
+function Person (id,name,email,mobile){
+	this.id = id;
+	this.name = name;
+	this.email = email;
+	this.mobile = mobile;
+	
+	this.createObj = function(){
+		
+		return ++this.id;
+	};
+	
+	
+}
+
+var Person01= new Person(0,'habib','daye@gmail.com',123455);
+
+//document.write(Person01);
+
+console.log(Person01.createObj());
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

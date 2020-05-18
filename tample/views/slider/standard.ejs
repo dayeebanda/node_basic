@@ -1,0 +1,232 @@
+﻿<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    header {
+        height: 40px;
+        width: 100%;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 120;
+    }
+    
+    header li {
+        float: left;
+        list-style-type: none;
+        border-right: 1px solid #252525;
+    }
+    
+    header li a {
+        float: left;
+        width: 98px;
+        height: 12px;
+        padding: 14px 7px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font: normal 62.5% "proxima-nova-alt", Helvetica, Arial, sans-serif;
+    }
+    
+    header .logo {
+        float: left;
+        width: 201px;
+        height: 40px;
+        background: #fde624 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat 16px 1px;
+    }
+    
+    #show-nails:hover div.thumbnail-peekaboo {
+        display: block;
+    }
+    
+    header div.thumbnail-peekaboo {
+        display: none;
+        height: 165px;
+        width: 3000px;
+        top: 40px;
+        left: 0;
+        background: #222;
+        background-size: 100px 100px;
+        position: absolute;
+    }
+    /*header div.thumbnail-peekaboo:hover {
+	-webkit-animation: TMNT 4s ease-in;
+	-webkit-animation-fill-mode:backwards;
+}*/
+    
+    .thumb {
+        height: auto;
+        width: auto;
+        top: 136px;
+        left: 12px;
+        position: relative;
+        background-size: contain;
+        box-shadow: -12px 0 0 12px #000;
+    }
+    
+    .thumb:last-of-type {
+        box-shadow: 0 0 0 12px #000;
+    }
+    
+    .thumb:after {
+        content: attr(title);
+        font: normal normal 20pt 'impact';
+        position: relative;
+    }
+    
+    .thumb:hover {
+        -webkit-filter: grayscale(80%);
+        -moz-filter: grayscale(80%);
+        -ms-filter: grayscale(80%);
+        -o-filter: grayscale(80%);
+        filter: grayscale(80%);
+        filter: url(grayscale.svg#greyscale);
+        filter: gray;
+    }
+    
+    @-webkit-keyframes TMNT {
+        0% {
+            left: 0px;
+        }
+        100% {
+            left: -1200px;
+        }
+    }
+    
+    a.prev,
+    a.next {
+        height: 91px;
+        position: absolute;
+        width: 43px;
+        top: 50%;
+        margin-top: -30px;
+        opacity: 0.6;
+        text-indent: -99999px;
+        cursor: pointer;
+        -webkit-transition: opacity 200ms ease-out;
+    }
+    
+    a.prev:hover,
+    a.next:hover {
+        opacity: 1;
+    }
+    
+    .prev {
+        left: 0;
+        background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -200px 25px;
+    }
+    
+    .next {
+        right: 0;
+        background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -167px 25px;
+    }
+    
+    .slider {
+        height: 100vh;
+        position: relative;
+    }
+    
+    .slide {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .slider .slide:target {
+        z-index: 100;
+    }
+    
+    img {
+        max-width: 100%;
+        width: 100%;
+        position: fixed;
+        left: 0;
+    }
+</style>
+<header>
+    <div class="logo"></div>
+    <div class="nav">
+        <ul>
+            <li id="show-nails">
+                <li><a href="/">Home</a></li>
+                <div class="thumbnail-peekaboo">
+                    <img class="thumb" title="Hello everyoone" src="https://lh6.googleusercontent.com/-UH8Tl-EG78c/UUoRYmvOWoI/AAAAAAAAADg/EIT1YomfqBo/s1231/1.jpeg.jpg">
+                    <img class="thumb" src="https://lh3.googleusercontent.com/-PcDDGh9C6Uk/UUoRYu8TmGI/AAAAAAAAADk/bVCVnUEott4/s1231/2.jpeg.jpg">
+                    <img class="thumb" src="https://lh5.googleusercontent.com/-ImESS5vXwTQ/UUoRZtDDdwI/AAAAAAAAAD0/mBlvPxXMuDU/s1231/3.jpeg.jpg">
+                    <img class="thumb" src="https://lh3.googleusercontent.com/-a4HykmTjnLw/UUoRZ9AOzNI/AAAAAAAAAD8/bsVqg8naI2o/s1231/4.jpeg.jpg">
+                    <img class="thumb" src="https://lh5.googleusercontent.com/-lmIWz4ADxc0/UUoRaFjdNXI/AAAAAAAAAEI/widPZMMiBVM/s1231/5.jpeg.jpg">
+                    <img class="thumb" src="https://lh3.googleusercontent.com/-ZbMYEV9F1Bc/UUoRajU3qmI/AAAAAAAAAEE/Y8nB8gecGgU/s1000/6.jpeg.jpg">
+                    <img class="thumb" src="https://lh6.googleusercontent.com/-88kTocv470A/UUoRbG0sNgI/AAAAAAAAAEU/XNupHrK1pvE/s1231/7.jpeg.jpg">
+                    <img class="thumb" src="https://lh3.googleusercontent.com/-O_0Ce7JxwJo/UUoRbZ6g4HI/AAAAAAAAAEc/O0mmZ0t0U88/s1231/8.jpeg.jpg">
+                    <img class="thumb" src="https://lh6.googleusercontent.com/-w7N6XM1WsqY/UUoRbRFPCeI/AAAAAAAAAEg/u3KB5ykIk9g/s1231/9.jpeg.jpg">
+                    <img class="thumb" src="https://lh6.googleusercontent.com/-UH8Tl-EG78c/UUoRYmvOWoI/AAAAAAAAADg/EIT1YomfqBo/s1231/1.jpeg.jpg">
+                    <img class="thumb" src="https://lh3.googleusercontent.com/-PcDDGh9C6Uk/UUoRYu8TmGI/AAAAAAAAADk/bVCVnUEott4/s1231/2.jpeg.jpg">
+                    <img class="thumb" src="https://lh5.googleusercontent.com/-ImESS5vXwTQ/UUoRZtDDdwI/AAAAAAAAAD0/mBlvPxXMuDU/s1231/3.jpeg.jpg">
+                    <img class="thumb" src="https://lh3.googleusercontent.com/-a4HykmTjnLw/UUoRZ9AOzNI/AAAAAAAAAD8/bsVqg8naI2o/s1231/4.jpeg.jpg">
+                    <img class="thumb" src="https://lh5.googleusercontent.com/-lmIWz4ADxc0/UUoRaFjdNXI/AAAAAAAAAEI/widPZMMiBVM/s1231/5.jpeg.jpg">
+                </div>
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+<div class="slider">
+    <ul>
+        <li id="no-js-slider-1" class="slide">
+            <img src="https://lh3.googleusercontent.com/-PcDDGh9C6Uk/UUoRYu8TmGI/AAAAAAAAADk/bVCVnUEott4/s1231/2.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-10">prev</a>
+            <a class="next" href="#no-js-slider-2">next</a>
+        </li>
+        <li id="no-js-slider-2" class="slide">
+            <img src="https://lh5.googleusercontent.com/-ImESS5vXwTQ/UUoRZtDDdwI/AAAAAAAAAD0/mBlvPxXMuDU/s1231/3.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-1">prev</a>
+            <a class="next" href="#no-js-slider-3">next</a>
+        </li>
+        <li id="no-js-slider-3" class="slide">
+            <img src="https://lh3.googleusercontent.com/-a4HykmTjnLw/UUoRZ9AOzNI/AAAAAAAAAD8/bsVqg8naI2o/s1231/4.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-2">prev</a>
+            <a class="next" href="#no-js-slider-4">next</a>
+        </li>
+        <li id="no-js-slider-4" class="slide">
+            <img src="https://lh5.googleusercontent.com/-lmIWz4ADxc0/UUoRaFjdNXI/AAAAAAAAAEI/widPZMMiBVM/s1231/5.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-3">prev</a>
+            <a class="next" href="#no-js-slider-5">next</a>
+        </li>
+        <li id="no-js-slider-5" class="slide">
+            <img src="https://lh3.googleusercontent.com/-ZbMYEV9F1Bc/UUoRajU3qmI/AAAAAAAAAEE/Y8nB8gecGgU/s1000/6.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-4">prev</a>
+            <a class="next" href="#no-js-slider-6">next</a>
+        </li>
+        <li id="no-js-slider-6" class="slide">
+            <img src="https://lh6.googleusercontent.com/-88kTocv470A/UUoRbG0sNgI/AAAAAAAAAEU/XNupHrK1pvE/s1231/7.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-5">prev</a>
+            <a class="next" href="#no-js-slider-7">next</a>
+        </li>
+        <li id="no-js-slider-7" class="slide">
+            <img src="https://lh3.googleusercontent.com/-O_0Ce7JxwJo/UUoRbZ6g4HI/AAAAAAAAAEc/O0mmZ0t0U88/s1231/8.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-6">prev</a>
+            <a class="next" href="#no-js-slider-8">next</a>
+        </li>
+        <li id="no-js-slider-8" class="slide">
+            <img src="https://lh6.googleusercontent.com/-w7N6XM1WsqY/UUoRbRFPCeI/AAAAAAAAAEg/u3KB5ykIk9g/s1231/9.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-7">prev</a>
+            <a class="next" href="#no-js-slider-9">next</a>
+        </li>
+        <li id="no-js-slider-9" class="slide">
+            <img src="https://lh6.googleusercontent.com/-7Rf9aSkpphc/UUoRYyoTOWI/AAAAAAAAADw/WRl-jV1fISc/s1000/10.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-8">prev</a>
+            <a class="next" href="#no-js-slider-10">next</a>
+        </li>
+        <li id="no-js-slider-10" class="slide">
+            <img src="https://lh6.googleusercontent.com/-UH8Tl-EG78c/UUoRYmvOWoI/AAAAAAAAADg/EIT1YomfqBo/s1231/1.jpeg.jpg">
+            <a class="prev" href="#no-js-slider-9">prev</a>
+            <a class="next" href="#no-js-slider-1">next</a>
+        </li>
+    </ul>
+</div>

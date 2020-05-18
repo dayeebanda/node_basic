@@ -1,0 +1,63 @@
+<%- include('../pages/partials/head.ejs') %>
+
+    <div class="jumbotron text-center">
+        <h1>My First Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
+    </div>
+
+    <div class="container">
+        <%- include('../pages/partials/nav') %>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Column 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Column 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Column 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+            </div>
+
+            <div>
+
+                <%= new Date().toString();%>
+                    <% if (post.publish) { %>
+                        <h3> Tilte is :
+                            <%= post.title %>
+                        </h3>
+                        <p> Body :
+                            <%= post.body %>
+                        </p>
+                        <% } else { %>
+
+                            <p>Post not yet publish </p>
+
+                            <% }%>
+
+            </div>
+
+            <div>
+                <ul>
+                    <% for (let p of posts) { %>
+                        <li>
+                            <%= p.title %> By
+                                <%= p.author %>
+
+                        </li>
+                        <% }%>
+                </ul>
+            </div>
+
+
+
+    </div>
+
+
+    <%- include('../pages/partials/footer.ejs') %>
